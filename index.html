@@ -8,7 +8,6 @@
     <meta name="description"
         content="Página oficial del programa de Ingeniería de Sistemas de la Universidad de la Amazonia">
     <meta name="author" content="Sebastian Bonilla Perdomo">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingeniería de Sistemas | Universidad de la Amazonia</title>
     <link rel="icon" type="image/x-icon" href="./archives/UA-01-593482179.png">
     <link rel="stylesheet" href="./css/styles.css">
@@ -25,82 +24,99 @@
 <body>
     <header>
         <div class="header-pic-container">
-            <a class="link universidad pic" href="https://www.uniamazonia.edu.co/Inicio/"><img
+            <a class="link universidad pic" href="https://www.uniamazonia.edu.co/Inicio/" target="_blank"><img
                     src="archives/Marca mixta UA horizontal - BLANCO.png" alt="Logo Uniamazonia"
-                    style="width: 400px;"></a>
+                    style="width: 350px;"></a>
         </div>
-        <div class="buttons-nav">
+
+        <!-- Botón de hamburguesa visible solo en móviles/tablets -->
+        <button id="btn-abrir-menu" class="menu-toggle" aria-label="Abrir menú">
+            <i class="bi bi-list"></i> <!-- Usando Bootstrap Icons -->
+        </button>
+
+        <div class="buttons-nav" id="nav-container">
+
+            <!-- Botón para cerrar el menú en móviles -->
+            <button id="btn-cerrar-menu" class="menu-close" aria-label="Cerrar menú">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
             <nav class="nav">
                 <ul class="menu">
-                    <li><a href="https://www.uniamazonia.edu.co/Inicio/">Inicio</a></li>
-                    <li class="dropdown"><a href="#">Programas <span class="flecha">&#709;</span></a>
+                    <li><a href="https://www.uniamazonia.edu.co/Inicio/" target="_blank">Inicio</a></li>
+                    <li class="dropdown"><a style="color: white;" class="dropdown-toggle-custom">Programas <span
+                                class="flecha">&#709;</span></a>
                         <ul class="submenu">
-                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/programas/pregrado.html">Pregrado
+                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/programas/pregrado.html"
+                                    target="_blank">Pregrado
                                     <span>&RightArrow;</span></a></li>
-                            <li><a
-                                    href="https://www.uniamazonia.edu.co/Inicio/index.php/es/programas/educacion-a-distancia/tecnologicos/tecnologia-en-criminalistica.html">Educación
+                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/programas/educacion-a-distancia/tecnologicos/tecnologia-en-criminalistica.html"
+                                    target="_blank">Educación
                                     a distancia <span>&RightArrow;</span></a></li>
-                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/programas/posgrado.html">Posgrado
+                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/programas/posgrado.html"
+                                    target="_blank">Posgrado
                                     <span>&RightArrow;</span></a></li>
-                            <li><a
-                                    href="https://chaira.uniamazonia.edu.co/AcademicoV3/Vistas/Publico/Evento/Evento.aspx">Educacion
+                            <li><a href="https://chaira.uniamazonia.edu.co/AcademicoV3/Vistas/Publico/Evento/Evento.aspx"
+                                    target="_blank">Educacion
                                     continuada <span>&RightArrow;</span></a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#">Investigación <span class="flecha">&#709;</span></a>
+                    <li class="dropdown"><a style="color: white;" class="dropdown-toggle-custom">Investigación <span
+                                class="flecha">&#709;</span></a>
                         <ul class="submenu">
-                            <li><a
-                                    href="https://www.uniamazonia.edu.co/inicio/index.php/es/investigacion/grupos-de-investigacion.html">Grupos
+                            <li><a href="https://www.uniamazonia.edu.co/inicio/index.php/es/investigacion/grupos-de-investigacion.html"
+                                    target="_blank">Grupos
                                     <span>&RightArrow;</span></a></li>
-                            <li><a href="https://editorial.uniamazonia.edu.co/">Nuestras revistas
+                            <li><a href="https://editorial.uniamazonia.edu.co/" target="_blank">Nuestras revistas
                                     <span>&RightArrow;</span></a></li>
-                            <li><a
-                                    href="https://www.uniamazonia.edu.co/inicio/index.php/es/investigacion/convocatorias.html">Investiga
+                            <li><a href="https://www.uniamazonia.edu.co/inicio/index.php/es/investigacion/convocatorias.html"
+                                    target="_blank">Investiga
                                     con nosotros <span>&RightArrow;</span></a></li>
-                            <li><a
-                                    href="https://www.uniamazonia.edu.co/inicio/index.php/es/investigacion/laboratorios-e-infraestructura.html">Infraestructura
+                            <li><a href="https://www.uniamazonia.edu.co/inicio/index.php/es/investigacion/laboratorios-e-infraestructura.html"
+                                    target="_blank">Infraestructura
                                     <span>&RightArrow;</span></a></li>
                         </ul>
                     </li>
-                    <li><a
-                            href="https://www.uniamazonia.edu.co/inicio/index.php/es/servicios-de-informacion/noticias-y-eventos.html">Noticias
+                    <li><a href="https://www.uniamazonia.edu.co/inicio/index.php/es/servicios-de-informacion/noticias-y-eventos.html"
+                            target="_blank">Noticias
                             y eventos</a></li>
-                    <li class="dropdown"><a href="#">Sobre nosotros <span class="flecha">&#709;</span></a>
+                    <li class="dropdown"><a style="color: white;" class="dropdown-toggle-custom">Sobre nosotros <span
+                                class="flecha">&#709;</span></a>
                         <ul class="submenu">
-                            <li><a
-                                    href="https://www.uniamazonia.edu.co/Inicio/index.php/es/la-universidad/organigrama.html">Sobre
+                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/la-universidad/organigrama.html"
+                                    target="_blank">Sobre
                                     la universidad <span>&RightArrow;</span></a></li>
-                            <li><a
-                                    href="https://www.uniamazonia.edu.co/inicio/index.php/es/la-universidad/presentacion/mision-y-vision.html">Misión
+                            <li><a href="https://www.uniamazonia.edu.co/inicio/index.php/es/la-universidad/presentacion/mision-y-vision.html"
+                                    target="_blank">Misión
                                     y visión <span>&RightArrow;</span></a></li>
-                            <li><a
-                                    href="https://www.uniamazonia.edu.co/Inicio/index.php/es/la-universidad/presentacion/resena-historica.html">Nuestra
+                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/la-universidad/presentacion/resena-historica.html"
+                                    target="_blank">Nuestra
                                     historia <span>&RightArrow;</span></a></li>
-                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/atencion-al-ciudadano.html">Contáctanos
+                            <li><a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/atencion-al-ciudadano.html"
+                                    target="_blank">Contáctanos
                                     <span>&RightArrow;</span></a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
-        </div>
-        <div class="search">
-            <img src="archives/search.png" alt="Buscar" id="search-icon" style="height:40px;">
-            <input type="text" id="campo-busqueda" class="campo-busqueda" placeholder="¿Qué deseas buscar?">
+            <div class="search">
+                <img src="archives/search.png" alt="Buscar" id="search-icon" style="height:40px;">
+                <input type="text" id="campo-busqueda" class="campo-busqueda" placeholder="¿Qué deseas buscar?">
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="section"></section>
-        <section class="section"></section>
-        <section class="section"></section>
-        <section class="section"></section>
-        <section class="section"></section>
-
-
-
-
+        <section class="section">informacion del programa</section>
+        <section class="section">proposito</section>
+        <section class="section">mision y vision</section>
+        <section class="section">perfil de egreso</section>
+        <section class="section">plan de estudios</section>
+        <section class="section">requisitos</section>
+        <section class="section">inversion</section>
+        <section class="section">documentos de interes</section>
+        <section class="section">contacto</section>
     </main>
-
 
     <footer class="footer">
         <div id="line"></div>
@@ -108,7 +124,7 @@
         <div class="footer-content">
             <div class="about" id="direction">
                 <div class="info-izquierda">
-                    <a href="https://www.uniamazonia.edu.co/Inicio/" class="footer-logo">
+                    <a href="https://www.uniamazonia.edu.co/Inicio/" class="footer-logo" target="_blank">
                         <img src="archives/Marca mixta UA vertical - BLANCO.png" alt="Logo Uniamazonia"
                             style="height: 120px;">
                     </a>
@@ -124,39 +140,44 @@
                 </div>
 
                 <div class="enlaces-derecha">
-                    <a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/atencion-al-ciudadano.html">Centro de
+                    <a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/atencion-al-ciudadano.html"
+                        target="_blank">Centro de
                         ayuda</a>
-                    <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/politica-de-privacidad.html">Políticas e
+                    <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/politica-de-privacidad.html"
+                        target="_blank">Políticas e
                         información</a>
-                    <a
-                        href="https://www.uniamazonia.edu.co/Inicio/index.php/es/la-universidad/presentacion/datos-de-contacto-sedes.html">Dónde
+                    <a href="https://www.uniamazonia.edu.co/Inicio/index.php/es/la-universidad/presentacion/datos-de-contacto-sedes.html"
+                        target="_blank">Dónde
                         estamos</a>
                 </div>
             </div>
             <div class="about" id="social-media">
-                <a href="https://www.facebook.com/uniamazonia.edu.co" target="_blank" aria-label="Facebook">
+                <a href="https://www.facebook.com/uniamazonia.edu.co" target="_blank">
                     <i class="bi bi-facebook"></i>
                 </a>
-                <a href="https://x.com/uniamazonia" target="_blank" aria-label="X (Twitter)">
+                <a href="https://x.com/uniamazonia" target="_blank">
                     <i class="bi bi-twitter-x"></i>
                 </a>
-                <a href="https://www.instagram.com/uniamazonia/" target="_blank" aria-label="Instagram">
+                <a href="https://www.instagram.com/uniamazonia/" target="_blank">
                     <i class="bi bi-instagram"></i>
                 </a>
-                <a href="https://www.youtube.com/c/uamazonia" target="_blank" aria-label="YouTube">
+                <a href="https://www.youtube.com/c/uamazonia" target="_blank">
                     <i class="bi bi-youtube"></i>
                 </a>
-                <a href="https://www.tiktok.com/@uniamazonia" target="_blank" aria-label="TikTok">
+                <a href="https://www.tiktok.com/@uniamazonia" target="_blank">
                     <i class="bi bi-tiktok"></i>
                 </a>
             </div>
             <div class="about" id="about">
                 <div class="footer-inferior">
                     <div class="footer-enlaces">
-                        <a href="https://chaira.uniamazonia.edu.co/Chaira/Logon.aspx">Chairá</a>
-                        <a href="https://aulaextendida.uniamazonia.edu.co/aulaextendida/">Aula Extendida</a>
-                        <a href="https://distancia.uniamazonia.edu.co/distancia/login/index.php">Campus Virtual</a>
-                        <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/ingreso-al-correo.html">Correo
+                        <a href="https://chaira.uniamazonia.edu.co/Chaira/Logon.aspx" target="_blank">Chairá</a>
+                        <a href="https://aulaextendida.uniamazonia.edu.co/aulaextendida/" target="_blank">Aula
+                            Extendida</a>
+                        <a href="https://distancia.uniamazonia.edu.co/distancia/login/index.php" target="_blank">Campus
+                            Virtual</a>
+                        <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/ingreso-al-correo.html"
+                            target="_blank">Correo
                             Institucional</a>
                     </div>
                     <div class="footer-copyright">
