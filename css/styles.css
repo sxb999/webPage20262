@@ -452,4 +452,8 @@ footer {
     #social-media {
         justify-content: center;
     }
+
+    .footer-copyright p{
+        text-align: center;
+    }
 }
