@@ -14,8 +14,7 @@ campoBusqueda.addEventListener('keypress', function (event) {
         event.preventDefault();
         const textoBuscado = campoBusqueda.value.trim();
         if (textoBuscado !== "") {
-            // Ejecuta tu búsqueda aquí
-            // window.location.href = "URL" + encodeURIComponent(textoBuscado);
+            window.location.href = "https://www.uniamazonia.edu.co/inicio/index.php/es/component/search/?searchword=" + encodeURIComponent(textoBuscado);
         }
     }
 });

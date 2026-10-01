@@ -28,7 +28,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    z-index: 9999;
+    z-index: 1000;
 }
 
 .header-pic-container {
@@ -40,7 +40,6 @@ header {
     align-items: center;
 }
 
-/* Ocultar botones de menú móvil en escritorio */
 .menu-toggle,
 .menu-close {
     display: none;
@@ -453,7 +452,7 @@ footer {
         justify-content: center;
     }
 
-    .footer-copyright p{
+    .footer-copyright p {
         text-align: center;
     }
 }
