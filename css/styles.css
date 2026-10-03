@@ -165,6 +165,10 @@ section {
     border: none;
     height: auto;
     padding: 0;
+    flex-direction: row;
+    padding: 50px;
+    text-align: justify;
+    justify-content: space-evenly;
 }
 
 /* --- LADO IZQUIERDO (TEXTO) --- */
@@ -246,14 +250,6 @@ section {
 }
 
 /* SECTION 2 */
-#mision-vision {
-    display: flex;
-    flex-direction: row;
-    padding: 50px;
-    text-align: justify;
-    justify-content: space-evenly;
-}
-
 .mision-texto {
     width: 45%;
     padding: 20px;
@@ -282,6 +278,27 @@ section {
     color: black;
     text-align: justify;
 }
+
+/* SECTION 3 */
+
+.perfil-texto {
+    width: 100%;
+    padding: 20px;
+}
+
+.perfil-texto h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.perfil-texto p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: black;
+    text-align: justify;
+}
+
 
 /* FOOTER */
 footer {
