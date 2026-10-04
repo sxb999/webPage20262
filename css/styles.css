@@ -167,7 +167,7 @@ section {
     padding: 0;
     flex-direction: row;
     padding: 50px;
-    text-align: justify;
+    text-align: left;
     justify-content: space-evenly;
 }
 
@@ -186,13 +186,11 @@ section {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    text-align: start;
 }
 
 .hero-texto p {
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: justify;
 }
 
 .hero-texto-div {
@@ -251,6 +249,11 @@ section {
 }
 
 /* SECTION 2 */
+
+#mision-vision {
+    background-color: white;
+}
+
 .mision-texto {
     width: 45%;
     padding: 20px;
@@ -277,7 +280,6 @@ section {
 #mision-vision p {
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: justify;
 }
 
 /* SECTION 3 */
@@ -297,7 +299,166 @@ section {
 .perfil-texto p {
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: justify;
+}
+
+/* SECTION 4 */
+
+#plan-estudios {
+    background-color: white;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.plan-contenedor {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    gap: 40px;
+}
+
+.filtro-sidebar {
+    width: 25%;
+    min-width: 250px;
+}
+
+.filtro-sidebar h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #042b05;
+}
+
+.filtro-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a331c;
+    border-bottom: 2px solid #f1f1f4;
+}
+
+.filtro-grupo label {
+    padding-top: 10px;
+    display: block;
+    color: #042b05;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.custom-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #0b750e;
+    font-size: 1rem;
+    color: #1a331c;
+    cursor: pointer;
+}
+
+.materias-grid {
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.materia-card {
+    background-color: #f1f1f4;
+    padding: 30px 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    overflow: hidden;
+}
+
+.materia-card h3 {
+    color: #042b05;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.materia-card p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.materia-meta {
+    font-size: 0.85rem;
+    color: #0b750e;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.btn-toggle-info {
+    background-color: #0b750e;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 15px;
+    z-index: 5;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-toggle-info:hover {
+    background-color: #042b05;
+}
+
+.materia-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(4, 43, 5, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+    padding: 20px;
+}
+
+.btn-contenido {
+    background-color: #6CE77E;
+    color: #042b05;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+.btn-contenido:hover {
+    background-color: #4ADE80;
+    color: #042b05;
+}
+
+.materia-card.activa .materia-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.materia-card.activa .btn-toggle-info {
+    transform: rotate(45deg);
+    background-color: #e81312;
 }
 
 /* SECTION 5 */
@@ -321,7 +482,6 @@ section {
 .requisitos-texto p {
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: justify;
 }
 
 .requisitos-grid {
@@ -396,6 +556,7 @@ section {
 
 /* SECTION 6 */
 #costo {
+    background-color: white;
     flex-direction: column;
     align-items: center;
 }
@@ -415,14 +576,12 @@ section {
 .costo-texto p {
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: justify;
 }
 
 .costo-texto li {
     list-style-type: square;
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: justify;
 }
 
 /* SECTION 7 */
@@ -447,7 +606,6 @@ section {
 .opciones-texto p {
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: justify;
 }
 
 .opciones-grid {
@@ -495,6 +653,7 @@ section {
 #contacto {
     display: flex;
     align-items: center;
+    background-color: white;
 }
 
 .contacto-contenedor {
@@ -523,7 +682,7 @@ section {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
-    text-align: justify;
+    margin-right: 50px;
 }
 
 .contacto-imagen {
@@ -538,6 +697,7 @@ section {
     height: 800px;
     object-fit: cover;
     object-position: top;
+    border: #0b750e solid 3px;
 }
 
 .bloque-horarios {

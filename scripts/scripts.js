@@ -78,3 +78,50 @@ dropdownToggles.forEach(toggle => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* 1. Lógica para filtrar materias por Semestre */
+    const selectorSemestre = document.getElementById('semestre-select');
+    const todasLasMaterias = document.querySelectorAll('.materia-card');
+
+    selectorSemestre.addEventListener('change', (e) => {
+        const semestreElegido = e.target.value;
+
+        todasLasMaterias.forEach(materia => {
+            // Cerramos cualquier overlay abierto al cambiar de semestre
+            materia.classList.remove('activa');
+
+            if (materia.getAttribute('data-semestre') === semestreElegido) {
+                materia.style.display = 'flex'; // Muestra la materia
+            } else {
+                materia.style.display = 'none'; // Oculta la materia
+            }
+        });
+    });
+
+    /* 2. Lógica para abrir/cerrar el Overlay de Contenidos Programáticos con cierre automático */
+    const botonesToggle = document.querySelectorAll('.btn-toggle-info');
+
+    botonesToggle.forEach(boton => {
+        boton.addEventListener('click', () => {
+            // Busca la tarjeta padre más cercana al botón clickeado
+            const tarjetaPadre = boton.closest('.materia-card');
+
+            // Alterna la clase 'activa' (Abre o cierra el panel oscuro)
+            tarjetaPadre.classList.toggle('activa');
+
+            // 1. Limpiamos cualquier temporizador previo si el usuario hace clic varias veces rápido
+            if (tarjetaPadre.temporizadorCierre) {
+                clearTimeout(tarjetaPadre.temporizadorCierre);
+            }
+
+            // 2. Si la tarjeta quedó abierta (activa), programamos su cierre automático
+            if (tarjetaPadre.classList.contains('activa')) {
+                tarjetaPadre.temporizadorCierre = setTimeout(() => {
+                    tarjetaPadre.classList.remove('activa');
+                }, 2500); // 3000 milisegundos = 3 segundos
+            }
+        });
+    });
+});
