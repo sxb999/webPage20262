@@ -148,6 +148,12 @@ header {
     color: #0a600d !important;
 }
 
+@media (min-width: 1025px) {
+    .dropdown:hover .submenu {
+        display: block;
+    }
+}
+
 /* MAIN */
 main {
     padding-top: 100px;
@@ -372,7 +378,7 @@ section {
 }
 
 .materia-card h3 {
-    color: #042b05;
+    color: #0b750e;
     font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 15px;
@@ -846,6 +852,8 @@ footer {
     text-align: right;
 }
 
+/* TABLETAS */
+
 
 @media (max-width: 1024px) {
 
@@ -1012,6 +1020,7 @@ footer {
     }
 }
 
+/* CELULARES */
 
 @media (max-width: 768px) {
 

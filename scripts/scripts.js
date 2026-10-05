@@ -53,18 +53,18 @@ const dropdownToggles = document.querySelectorAll('.dropdown-toggle-custom');
 dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', function (e) {
         e.preventDefault();
+        if (window.innerWidth <= 1024) {
+            const submenu = this.nextElementSibling;
+            if (submenu) {
+                submenu.classList.toggle('activo');
 
-        const submenu = this.nextElementSibling;
-
-        if (submenu) {
-            submenu.classList.toggle('activo');
-
-            const flecha = this.querySelector('.flecha');
-            if (flecha) {
-                if (submenu.classList.contains('activo')) {
-                    flecha.innerHTML = '&#708;';
-                } else {
-                    flecha.innerHTML = '&#709;';
+                const flecha = this.querySelector('.flecha');
+                if (flecha) {
+                    if (submenu.classList.contains('activo')) {
+                        flecha.innerHTML = '&#708;';
+                    } else {
+                        flecha.innerHTML = '&#709;';
+                    }
                 }
             }
         }
@@ -86,7 +86,6 @@ document.addEventListener('click', function (e) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* Filtrar materias por Semestre */
     const selectorSemestre = document.getElementById('semestre-select');
     const todasLasMaterias = document.querySelectorAll('.materia-card');
 
@@ -104,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* Abrir/cerrar el Overlay de Contenidos Programáticos con cierre automático */
     const botonesToggle = document.querySelectorAll('.btn-toggle-info');
 
     botonesToggle.forEach(boton => {
