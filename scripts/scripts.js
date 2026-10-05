@@ -1,4 +1,4 @@
-// --- 1. LÓGICA DE LA BARRA DE BÚSQUEDA ---
+// --- BARRA DE BÚSQUEDA ---
 const iconoLupa = document.getElementById('search-icon');
 const campoBusqueda = document.getElementById('campo-busqueda');
 
@@ -19,7 +19,7 @@ campoBusqueda.addEventListener('keypress', function (event) {
     }
 });
 
-// --- 2. LÓGICA DEL BOTÓN VOLVER ARRIBA ---
+// --- BOTÓN VOLVER ARRIBA ---
 const btnVolverArriba = document.getElementById('btn-volver-arriba');
 if (btnVolverArriba) {
     btnVolverArriba.addEventListener('click', function () {
@@ -30,58 +30,52 @@ if (btnVolverArriba) {
     });
 }
 
-// --- 3. LÓGICA DEL MENÚ PANTALLA COMPLETA (MÓVIL) ---
+// --- MENÚ PANTALLA COMPLETA (MÓVIL) ---
 const btnAbrirMenu = document.getElementById('btn-abrir-menu');
 const btnCerrarMenu = document.getElementById('btn-cerrar-menu');
 const navContainer = document.getElementById('nav-container');
 
 if (btnAbrirMenu && btnCerrarMenu && navContainer) {
-    // Abrir menú
     btnAbrirMenu.addEventListener('click', function () {
         navContainer.classList.add('abierto');
-        document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+        document.body.style.overflow = 'hidden';
     });
 
-    // Cerrar menú
     btnCerrarMenu.addEventListener('click', function () {
         navContainer.classList.remove('abierto');
-        document.body.style.overflow = 'auto'; // Restaura scroll
+        document.body.style.overflow = 'auto';
     });
 }
 
-// --- 4. LÓGICA DE LOS SUBMENÚS DESPLEGABLES (TODAS LAS PANTALLAS) ---
+// --- SUBMENÚS DESPLEGABLES (TODAS LAS PANTALLAS) ---
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle-custom');
 
 dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', function (e) {
-        e.preventDefault(); // Evita el salto de página por el href="#"
+        e.preventDefault();
 
-        const submenu = this.nextElementSibling; // Selecciona el <ul> submenu
+        const submenu = this.nextElementSibling;
 
         if (submenu) {
-            // Alternar la clase activo
             submenu.classList.toggle('activo');
 
-            // Cambia la dirección de la flecha visualmente
             const flecha = this.querySelector('.flecha');
             if (flecha) {
                 if (submenu.classList.contains('activo')) {
-                    flecha.innerHTML = '&#708;'; // Flecha arriba
+                    flecha.innerHTML = '&#708;';
                 } else {
-                    flecha.innerHTML = '&#709;'; // Flecha abajo
+                    flecha.innerHTML = '&#709;';
                 }
             }
         }
     });
 });
 
-// Cerrar los submenús si se hace clic en cualquier lugar fuera de ellos
 document.addEventListener('click', function (e) {
     if (!e.target.closest('.dropdown')) {
         document.querySelectorAll('.submenu.activo').forEach(submenuAbierto => {
             submenuAbierto.classList.remove('activo');
 
-            // Restaura la flecha hacia abajo
             const flecha = submenuAbierto.previousElementSibling.querySelector('.flecha');
             if (flecha) {
                 flecha.innerHTML = '&#709;';
@@ -92,7 +86,7 @@ document.addEventListener('click', function (e) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* 1. Lógica para filtrar materias por Semestre */
+    /* Filtrar materias por Semestre */
     const selectorSemestre = document.getElementById('semestre-select');
     const todasLasMaterias = document.querySelectorAll('.materia-card');
 
@@ -100,38 +94,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const semestreElegido = e.target.value;
 
         todasLasMaterias.forEach(materia => {
-            // Cerramos cualquier overlay abierto al cambiar de semestre
             materia.classList.remove('activa');
 
             if (materia.getAttribute('data-semestre') === semestreElegido) {
-                materia.style.display = 'flex'; // Muestra la materia
+                materia.style.display = 'flex';
             } else {
-                materia.style.display = 'none'; // Oculta la materia
+                materia.style.display = 'none';
             }
         });
     });
 
-    /* 2. Lógica para abrir/cerrar el Overlay de Contenidos Programáticos con cierre automático */
+    /* Abrir/cerrar el Overlay de Contenidos Programáticos con cierre automático */
     const botonesToggle = document.querySelectorAll('.btn-toggle-info');
 
     botonesToggle.forEach(boton => {
         boton.addEventListener('click', () => {
-            // Busca la tarjeta padre más cercana al botón clickeado
             const tarjetaPadre = boton.closest('.materia-card');
 
-            // Alterna la clase 'activa' (Abre o cierra el panel oscuro)
             tarjetaPadre.classList.toggle('activa');
 
-            // 1. Limpiamos cualquier temporizador previo si el usuario hace clic varias veces rápido
             if (tarjetaPadre.temporizadorCierre) {
                 clearTimeout(tarjetaPadre.temporizadorCierre);
             }
 
-            // 2. Si la tarjeta quedó abierta (activa), programamos su cierre automático
             if (tarjetaPadre.classList.contains('activa')) {
                 tarjetaPadre.temporizadorCierre = setTimeout(() => {
                     tarjetaPadre.classList.remove('activa');
-                }, 2500); // 3000 milisegundos = 3 segundos
+                }, 2500);
             }
         });
     });
